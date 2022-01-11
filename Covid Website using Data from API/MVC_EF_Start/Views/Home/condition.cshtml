@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MVC_EF_Start.Models.Covid_Condition>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Condition</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="shortcut icon" type="image/png" href="/">
+    <link rel="stylesheet" type="text/css" href="/css/site.css">
+
+
+</head>
+
+<body>
+    <div class="topnav">
+
+        <a href="/Home/Index">Home</a>
+        <a href="/Home/main"> About Covid-19</a>
+        <a href="/Home/Chart">Visualizations</a>
+        <a class="active" href="/Home/Data">Data & Statistics</a>
+        <a href="/Home/helpfulresources">Helpful Resources</a>
+        <a href="/Home/AboutUs">About Us</a>
+
+
+    </div>
+
+    <h1 style="color: #159494; text-align:center">You can update or delete here :</h1>
+
+    <div id="nav-bar"></div>
+    <div id="includedContent"></div>
+    <div class="center">
+        <h1></h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Condition</th>
+                    <th>Total Covid Deaths</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var val in Model)
+            {
+
+                <tr class="active-row">
+                    <td>@val.condition</td>
+                    @*
+                <td>@condition.age_group</td>*@
+
+                    <td>@val.covid_19_deaths</td>
+                    <td>
+                        @using (Html.BeginForm("Update", "Home", new { cond = val.condition }))
+                        {
+                            <input class="tablink" type="submit" value="Update" style="background-color:darkslategray"
+                                   onclick="return confirm('Are You sure you want to update @val.condition?');" />
+                        }
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("Delete", "Home", new { cond = val.condition }))
+                        {
+                            <input class="tablink" type="submit" value="Delete" style="background-color:darkslategray"
+                                   onclick="return confirm('Are You sure you want to delete @val.condition?');" />
+                        }
+
+                    </td>
+
+
+
+                </tr>
+            }
+           @* @foreach (var val in Model) { 
+                <td colspan="5">
+                    @using (Html.BeginForm("Add", "Home", new { cond = val.condition_group }))
+                    {
+                        <button class="btn" onclick="window.location.href='/Home/Add'">Add New Condition</button>
+                    }
+                </td>
+            }*@
+
+        </table>
+    </div>
+
+</body>
+</html>

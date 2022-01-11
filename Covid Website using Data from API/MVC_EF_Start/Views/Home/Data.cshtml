@@ -1,0 +1,71 @@
+﻿@model IEnumerable<MVC_EF_Start.Models.Covid_Condition>
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <title>Data & Statistics</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="shortcut icon" type="image/png" href="/">
+    <link rel="stylesheet" type="text/css" href="/css/site.css">
+
+
+</head>
+
+<body>
+    <div class="topnav">
+
+        <a href="/Home/Index">Home</a>
+        <a href="/Home/main"> About Covid-19</a>
+        <a href="/Home/Chart">Visualizations</a>
+        <a class="active" href="/Home/Data">Data & Statistics</a>
+        <a href="/Home/helpfulresources">Helpful Resources</a>
+        <a href="/Home/AboutUs">About Us</a>
+
+
+    </div>
+
+    <h1 style="color: #159494; text-align:center">The statistical analysis of data is as follows :</h1>
+
+    <div id="nav-bar"></div>
+    <div id="includedContent"></div>
+    <div class="center">
+        <h1></h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Condition Group</th>
+                    <th>Total Covid-19 Deaths</th>
+                    @*<th></th>
+                        <th></th>*@
+                </tr>
+            </thead>
+            @foreach (var condition in from p in Model
+                                      group p by p.condition_group into g
+                                      select new { condition_group = g.Key, covid_19_deaths = g.Sum(c => Convert.ToInt64(c.covid_19_deaths)) })
+            {
+                <tr class="active-row">
+                    <td>@Html.ActionLink(condition.condition_group, "condition", new { val = condition.condition_group }) </td>
+                    <td>@condition.covid_19_deaths</td>
+                   
+                </tr>
+            }
+
+            <tr></tr>
+
+            <td colspan="5"><button class="btn" onclick="window.location.href='/Home/Add'">Add New Condition</button></td>
+        </table>
+    </div>
+
+</body>
+</html>

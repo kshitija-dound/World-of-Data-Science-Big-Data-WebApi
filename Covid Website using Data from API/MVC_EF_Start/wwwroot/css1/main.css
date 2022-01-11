@@ -1,0 +1,269 @@
+﻿/**
+Sample css code
+*/
+/* Set height to 100% for body and html to enable the background image to cover the whole page: */
+body,
+html {
+    height: 100%;
+}
+
+/*Set background image*/
+.container {
+    background-image: url('https://doc-10-ao-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/r085o9ungppbiokopob2sfbekae4uqbb/1537920000000/14802840322886517493/*/110cT8sl-pOiHGgj9yToPkAqAzrr-RNfb');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Position text in the middle */
+.middle {
+    position: absolute;
+    color: beige;
+    top: 70%;
+    left: 39%;
+    text-align: center;
+    font-size: 25px;
+}
+
+    /*Set circle in unordered list*/
+    .middle ul {
+        list-style-type: circle;
+    }
+
+        /*Set text inside li tag to left*/
+        .middle ul li {
+            text-align: left !important;
+        }
+
+            /*Set text color for a tag inside middle class and ul>li element*/
+            .middle ul li a {
+                color: beige;
+            }
+
+                /*Change text color and decoration for a tags inside middle class and ul>li element*/
+                .middle ul li a:hover {
+                    color: red;
+                    text-decoration: none;
+                }
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 5px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #941414;
+}
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        margin-bottom: 0 !important;
+        border: 0 !important;
+    }
+
+        .topnav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #159494;
+            color: white;
+        }
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.boxed {
+    background-color: #941414;
+    border: 5px solid black;
+    padding: 0px;
+    height: 780px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 10px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    /* font-size: 1.2vw;  */
+    font-family: sans-serif;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+    .styled-table.responsive {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        /* font-size: 1.2vw; */
+        font-family: sans-serif;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .styled-table thead tr {
+        background-color: #00664d;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+    }
+
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+            background-color: #00b386
+        }
+
+        .styled-table tbody tr:nth-of-type(odd) {
+            background-color: #f3f3f3;
+            background-color: #eeeedd
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid darkslategray;
+        }
+
+        .styled-table tbody tr.active-row {
+            font-weight: bold;
+            /* color: #009879; */
+            color: darkslategray;
+        }
+
+.button {
+    background-color: darkslategray;
+    color: white;
+    float: left;
+    cursor: pointer;
+    padding: 2px 10px;
+    font-size: 16px;
+    width: 40%;
+}
+
+    .button:hover {
+        background-color: darkslategray;
+    }
+
+    .button:active {
+        position: relative;
+        top: 1px;
+    }
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 20%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #0d0d0d;
+    color: #ffff
+}
+
+    .btn:hover {
+        background: #595959;
+        transition: all 0.3s ease;
+    }
+
+    .btn:active {
+        position: relative;
+        top: 1px;
+    }
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Style the container */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary {
+        width: 67%;
+    }
+
+    #secondary {
+        width: 30%;
+        margin-left: 3%;
+    }
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary {
+        width: 100%;
+    }
+
+    #secondary {
+        width: 100%;
+        margin: 0;
+        border: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

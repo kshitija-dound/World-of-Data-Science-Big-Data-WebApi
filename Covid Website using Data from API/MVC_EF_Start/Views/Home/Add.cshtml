@@ -1,0 +1,69 @@
+﻿@model MVC_EF_Start.Models.Covid_Condition
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="shortcut icon" type="image/png" href="/">
+    <link rel="stylesheet" type="text/css" href="/css/site.css">
+
+
+</head>
+<body>
+    <div class="topnav">
+
+        <a href="/Home/Index">Home</a>
+        <a href="/Home/main"> About Covid-19</a>
+        <a href="/Home/Chart">Visualizations</a>
+        <a class="active" href="/Home/Data">Data & Statistics</a>
+        <a href="/Home/helpfulresources">Helpful Resources</a>
+        <a href="/Home/AboutUs">About Us</a>
+
+
+    </div>
+
+    <h1 style="text-align: center; color: #0d0d0d">You can add new condition here  :</h1>
+    <div id="nav-bar"></div>
+    <script src="https://kit.fontawesome.com/f4cc93c88a.js" crossorigin="anonymous"></script>
+    <div id="includedContent"></div>
+    <div class="center">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    
+                    <th colspan="10">Add New Condition</th>
+                </tr>
+            </thead>
+            <tr>
+            <tr>
+
+                    @using (Html.BeginForm("AddNew", "Home", FormMethod.Post))
+                    {
+
+                        
+                        <td >Enter the condition group: @Html.TextBoxFor(m => m.condition_group)</td> <br />
+                        <td >Enter the condition: @Html.TextBoxFor(m => m.condition) </td> <br />
+                        <td>Enter Number of deaths due to covid: @Html.TextBoxFor(m => m.covid_19_deaths)</td><br />
+
+                        <tr >
+                        <td colspan="5">
+                        <input class="tablink" id="Submit" type="submit" value="Submit" style="background-color:darkslategray"
+                               
+                               onclick="return postMessage('New Condition Group Added Succesfully');"/></td><br/>
+                        </tr >
+
+                    }
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+</html>

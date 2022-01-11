@@ -1,0 +1,78 @@
+﻿@model MVC_EF_Start.Models.Covid_Condition
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="shortcut icon" type="image/png" href="/">
+    <link rel="stylesheet" type="text/css" href="/css/site.css">
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+</head>
+<body>
+    <div class="topnav">
+
+        <a href="/Home/Index">Home</a>
+        <a href="/Home/main"> About Covid-19</a>
+        <a href="/Home/Chart">Visualizations </a>
+        <a class="active" href="/Home/Data">Data & Statistics</a>
+        <a href="/Home/helpfulresources">Helpful Resources</a>
+        <a href="/Home/AboutUs">About Us</a>
+
+
+    </div>
+
+    <h1 style="text-align: center; color: #0d0d0d">You can update total covid deaths here  :</h1>
+    <div id="nav-bar"></div>
+    <script src="https://kit.fontawesome.com/f4cc93c88a.js" crossorigin="anonymous"></script>
+    <div id="includedContent"></div>
+    <div class="center">
+        <h1></h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th colspan="5">Update Record</th>
+                </tr>
+            </thead>
+            <tr>
+            <tr>
+                <td>
+                    <form>
+                        <label>Condition Group<br>(Read-only)</label><br>
+                        <input type="text" name="Condition Group" readonly placeholder="@Model.condition_group" style="background-color:#d8d8d8;"><br>
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <label>Condition<br>(Read-only)</label><br>
+                        <input type="text" name="Condition" readonly placeholder="@Model.condition" style="background-color:#d8d8d8;"><br>
+                    </form>
+                </td>
+
+                <td>
+                    <br /><br /><br />
+                    @using (Html.BeginForm("UpdateRecord", "Home", new { cond = Model.condition }))
+                    {
+                    @Html.HiddenFor(m => m.CaseId)
+                    <label for="fname">Total Covid deaths<br> <br></label><br>
+                    
+                    <input type="text" id="fname" name="covid_19_deaths" placeholder="@Model.covid_19_deaths"><br><br />
+                    <input class="tablink" type="submit" value="Update" style="background-color:darkslategray"
+                           onclick="return postMessage('Updated Succesfully');" />
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+</html>

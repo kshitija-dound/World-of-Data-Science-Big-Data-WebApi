@@ -1,0 +1,166 @@
+﻿@model MVC_EF_Start.Models.ChartModel
+
+@{ Layout = null; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Charts</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Visualizations </title>
+
+    <link rel="stylesheet" type="text/css" href="/css1/StyleSheet.css">
+
+
+
+
+</head>
+<body>
+    <div class="topnav">
+
+        <a href="/Home/Index">Home</a>
+        <a href="/Home/main"> About Covid-19</a>
+        <a class="active" href="/Home/Chart">Visualizations </a>
+        <a href="/Home/Data">Data & Statistics</a>
+        <a href="/Home/helpfulresources">Helpful Resources</a>
+        <a href="/Home/AboutUs">About Us</a>
+
+
+    </div>
+
+
+
+    <div style="margin : 15px">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-sm-4">
+
+                    <h2>Covid Death Condition wise - Bar Chart </h2>
+                    <canvas id="BarChart" style="display: block;height: auto;width: auto;"></canvas>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <h2>Covid Death Condition wise - Pie Chart </h2>
+
+                    <canvas id="PieChart" style="display: block;height: auto;width: auto;"></canvas>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+        <script>
+
+
+
+        //const data
+        const data = {
+            labels: [@Html.Raw(@Model.Labels)],
+
+        datasets: [{
+            defaultFontColor: 'red',
+            pointBackgroundColor: "red",
+            pointBorderColor: "#fff",
+            lineTension: 0,
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(179,181,198,1)",
+
+            data: [@Model.Data],
+
+        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#86CEE8",
+            "#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#86CEE8",
+            "#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#86CEE8", "#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#86CEE8"]
+                        }]
+                    };
+
+        const config1 = {
+            type: "bar",
+            data,
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: '@Model.Title',
+                    fontStyle: "bold"
+                },
+                scales: {
+                    pointLabels: {
+                        fontStyle: "bold",
+                    },
+                    y: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true
+                        },
+                        fontSize: 9,
+                        padding: -9
+                    }],
+                    x: [{
+                        gridLines: {
+                            display: false
+                        },
+                        ticks: {
+                            beginAtZero: true,
+                            display: false
+                        },
+                        scaleFontSize: 20,
+                        padding: -9
+                    }]
+                },
+
+            }
+        };
+
+        const config2 = {
+            type: "pie",
+            data,
+
+            options: {
+                pointLabels: {
+                    fontStyle: "bold",
+                    display: true
+                },
+                title: {
+                    display: true,
+                    text: 'Covid Death Count Pie Chart',
+
+                },
+            }
+
+        };
+
+        const myChart = new Chart(
+            document.getElementById('BarChart'), config1
+        );
+
+        const myChart1 = new Chart(
+            document.getElementById('PieChart'), config2
+        );
+
+
+
+
+        </script>
+
+
+
+
+</body>
+</html>
+
+
+

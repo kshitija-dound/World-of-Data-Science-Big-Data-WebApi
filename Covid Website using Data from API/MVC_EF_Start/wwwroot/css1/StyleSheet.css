@@ -1,0 +1,136 @@
+﻿.topnav {
+    overflow: hidden;
+    background-color: #941414;
+}
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        margin-bottom: 0 !important;
+        border: 0 !important;
+    }
+
+        .topnav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #159494;
+            color: white;
+        }
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.boxed {
+    background-color: #941414;
+    border: 5px solid black;
+    padding: 0px;
+    height: 780px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 10px;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 32.5%;
+    padding: 5px;
+    display: flex;
+}
+
+
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+img {
+    border: 3px solid white;
+    width: 350px;
+    height: 350px;
+}
+
+img, p {
+    display: inline-block;
+}
+
+.float-container {
+    padding: 20px;
+}
+
+.float-child {
+    width: 20%;
+    float: left;
+    padding: 20px;
+}
+
+p {
+    color: white;
+    text-align: center;
+    left: 600px;
+}
+
+
+a {
+    color: #ffd700;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: 30px;
+    text-align: center
+}
+
+.chartBox {
+    width: 300px;
+}
+
+/* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary {
+        width: 67%;
+    }
+
+    #secondary {
+        width: 30%;
+        margin-left: 3%;
+    }
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary {
+        width: 100%;
+    }
+
+    #secondary {
+        width: 100%;
+        margin: 0;
+        border: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
