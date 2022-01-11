@@ -1,4 +1,4 @@
-# MVC_EF_Start
+# Covid Website using Data from API 
 This is a starting point for an MVC Core project, with tooling for Entity Framework.
 
 Website link : https://disgroup3deployfinal.azurewebsites.net/
